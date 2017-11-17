@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Opinion Miner - HOMEPAGE</title>
+    <link href="https://fonts.googleapis.com/css?family=Abel|Bubblegum+Sans|Cinzel|Dosis|Julius+Sans+One|Indie+Flower|Arvo" rel="stylesheet"> 
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url("http://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero-00e10b1f.jpg");
+            background-size: 100%;
+        }
+        .left{
+        position: absolute;
+            left: 0px;
+        }
+        .right{
+            position: absolute;
+            right:0px;
+        }
+        #content{
+            position: relative;
+        }
+        #header
+        {    
+            text-align: center;
+        }
+        #header h1{
+            margin-top: 25px;
+            font-size: 100px;
+            display: inline-block;
+            font-family: 'Julius Sans One', cursive;
+            border-bottom: 2px solid;
+            margin-bottom: 0px;
+        }
+        #header h3{
+            margin-top: 0px;
+            font-family: 'Bubblegum Sans', cursive;
+            font-size: 40px;
+            color: rgba(0,0,0,0.7);
+        }
+        #input{
+            padding: 30px;
+            margin: 100px 170px;
+            align-content: center;
+            position: relative;
+            background-color: rgba(0,0,0, 0.4);
+        }
+        #input-head{
+            display: inline-block;
+        }
+        #input-head h2{
+            color: white;
+            margin-bottom: 1px;
+            font-family: 'Indie Flower', cursive;
+        }
+        #input-btn-container{
+            display: inline-block;
+            
+        }
+        #input-btn{
+            border-width: 0px;
+            border-radius: 10px;
+            font-family: 'Arvo', cursive;
+            background: linear-gradient(#63092C,#94012E,#F53D3B);
+            font-size: 20px;
+            color: white;
+            top : 80px;    
+            left:85%;
+           height: 35%;
+            width: 12%;
+            box-sizing: border-box;
+        }
+        
+        #load{
+           
+            width: 125px;
+            height: 125px;
+        position: absolute;
+            background-color: transparent;
+            display: none;
+            border: 0px;
+            bottom: -10px;
+            left: 45%;
+        }
+        
+        #input-btn:hover{
+                     border: 2px solid #edde0e;
+            cursor: pointer;
+            color: #edde0e;
+ 
+        }
+    .inputText
+        {    width: 95%;
+            font-size: 20px;
+            background-color: #d6d4e0;
+            height: 50px;
+            box-sizing: border-box;
+        }
+        .inputText :hover{
+            background-color: #b7d7e8;
+            border: 3px solid #622569;
+        }
+        
+        #input-area:focus{
+         border: 5px solid #edde0e;   
+        }
+        #input-area :hover{
+            
+            border: 5px solid #edde0e;
+        }
+        
+        #errors{
+            position: absolute;
+            margin: 5px;
+            color: red; 
+            font-size: 25px;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+    <script>
+    function showGif(){
+        document.getElementById('load').style.display='block';
+        console.log("--under the show gif");
+    }
+    </script>
+</head>
+<body>
+   <div id="header">
+        <h1>OPINION  MINER</h1>
+        <h3>&quot;Compare the best , Buy the best &quot;</h3>
+   </div>
+   <div id="content">
+       <form action="" method="post" name="login">
+        <div id="input">
+           <div id="input-head">
+              <h2>
+                  Please enter the link:
+              </h2>
+               <div id="input-area">
+                  {{ form.openid(size=80,class_='inputText') }}                   
+               </div>
+            </div>
+           <div id="input-btn-container">                
+                    {{ form.hidden_tag() }}
+                <input id="input-btn" class="right" type="submit" value="SUBMIT" onclick="showGif()">                  
+            </div>
+           </div>           
+        {% for error in form.openid.errors %}
+          <span id="errors">[{{error}}]</span>
+        {% endfor %}<br>
+        </form>
+        <div >
+        <img id="load" src="https://loading.io/spinners/hourglass/lg.sandglass-time-loading-gif.gif" alt="loading...">
+		</div>
+    </div>       
+
+</body>
+</html>

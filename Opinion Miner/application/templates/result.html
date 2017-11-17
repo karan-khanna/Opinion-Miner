@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+    <title>result page</title>
+<!--    <link rel="stylesheet" href="../static/styles/custom.css">-->
+   <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Josefin+Sans|Poiret+One|Merienda|Kurale" rel="stylesheet">
+   
+    <style>
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        body{
+            margin: 2px;
+        }
+        #header{
+        margin: 10px;
+        background-color: #E0E0E0;
+        }
+        .left{
+            float: left;
+        }
+        .right{
+            float: right;
+        }
+        #header h1{
+            padding: 20px;
+            margin: 0px;
+            font-family: 'Poiret One', cursive;
+/*            font-family: 'Julius Sans One', sans-serif;*/
+            color:#424242;
+            font-size: 50px;
+            text-align: center;
+
+        }
+        #header_bottom{
+            padding: 0px 68px;
+        }
+        .count{
+            padding: 10px 0px; 
+            display: inline-block;
+            width: 31%;
+        }
+        .count h3{
+            text-align: center;
+            font-size: 21px;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .pos_count{
+            background-color: #69F0AE;
+        }
+        .neu_count{
+            background-color: #BBDEFB;
+            margin: 0px 30px;
+        }
+        .neg_count{
+            background-color: #FF8A80;
+        }
+        .chart{
+            border: 2px red solid;
+            display: inline-block;
+            margin: 10px 60px;
+        }    
+        .most{
+        
+            position: relative;
+            padding: 20px;
+        }
+        .pos_img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+        .neg_img{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        
+        .most div h2{
+            font-family: 'Merienda', sans-serif;
+            display: inline-block;
+            color: white;
+        }
+        #pos_head{
+            padding-left: 100px;
+        }
+        #neg_head{
+            padding-right: 100px;
+            padding-left: 100px;
+
+        }
+        #most_pos{
+            border-radius: 100px;
+            background-color: #E91E63;
+        }
+        
+        #most_neg{
+            border-radius: 100px;
+            background-color: #4E342E;
+        }
+        
+    </style>
+</head>
+<body>
+<div id="header">
+    <h1>Voila! All the Stats you need...</h1>
+</div>
+<div id="header_bottom">
+    <div class="count pos_count">     
+        <h3>Number Of Positive Reviews : {{pos}}</h1>
+    </div>
+    <div class="count neu_count">
+        <h3>Number Of Neutral Reviews  : {{nue}}</h1>
+    </div>
+    <div class="count neg_count">
+        <h3>Number Of Negative Reviews : {{neg}}</h1>
+    </div>
+    
+</div>
+<div class="chart">
+    {{pie_chart.render()|safe}}
+</div>
+<div class="most">
+    <div id="most_pos">
+       <img class="pos_img" src="https://students.ubc.ca/sites/students.ubc.ca/files/emoji-hearteyes.png" alt="">
+        <h2 id="pos_head">MOST POSITIVE<p>{{mostPositive}}</p></h2>
+    </div>
+</div>
+<div class="most">    
+    <div id="most_neg" class="clearfix">
+       <img class="neg_img right" src="https://wir.skyrock.net/wir/v1/resize/?c=isi&im=%2F6539%2F56406539%2Fpics%2F2274741251_2.png&w=100&h=100" alt="">
+        <h2 id="neg_head" class="right">MOST NEGATIVE<p>{{mostNegative}}</p></h2>
+    </div>
+</div>
+<div class="chart">
+    {{good_graph.render()|safe}}
+</div>
+<div class="chart">
+    {{bad_graph.render()|safe}}
+</div>
+<div class="chart">
+    {{noun_graph.render()|safe}}
+</div>
+<div class="chart">
+    {{line_graph.render()|safe}}
+</div>
+  
+</body>
+</html>
