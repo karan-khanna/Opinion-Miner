@@ -1,5 +1,5 @@
 # Opinion-Miner
-Project on Sentiment Analysis which makes good use of available python libraries. P.S - It is not a research based project.
+Project on Sentiment Analysis which makes good use of available python libraries. 
 
 The focus of the project is to retrieve and analyse the reviews of any product obtained from popular online shopping portals like amazon.com or snapdeal.com. In order to achieve this, we must satisfy the following requirements which are given along with the solutions employed. :
 
