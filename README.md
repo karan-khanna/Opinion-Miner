@@ -16,3 +16,4 @@ V.	Parts of Speech tagging – NLTK
 VI.	Sentiment analysis and Polarity determination - VaderSentiment
 
 Hence, it can be seen that the project has completely been implemented in python so as to make good use of its available libraries and 3rd party modules. 
+P.S : It is not a research project.
